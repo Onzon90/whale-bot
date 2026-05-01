@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  background: #0a0412;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+}
+
+/* Envelope */
+#envelope {
+  width: 260px;
+  height: 170px;
+  background: linear-gradient(135deg, #2a0f4a, #1a0630);
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+#flap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #3d1460;
+  clip-path: polygon(0 0, 50% 60%, 100% 0);
+  transform-origin: top;
+  transition: 0.6s;
+}
+
+.open #flap {
+  transform: rotateX(180deg);
+}
+
+/* Card */
+#card {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+#card.show {
+  visibility: visible;
+}
+
+.card-box {
+  background: #111;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+  from {transform: scale(0.5); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+h1 {
+  color: gold;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: gold;
+  border-radius: 20px;
+  cursor: pointer;
+}
